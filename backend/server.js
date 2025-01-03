@@ -2,9 +2,16 @@ const dotenv = require('dotenv')
 dotenv.config()
 const express = require('express')
 const mongoose = require('mongoose')
+<<<<<<< Updated upstream
 const usermodel = require('./models/Users');
 const eventmodel = require('./models/Events');
+=======
+const app = express();
+const PORT = 8080 | process.env.BACKEND_PORT
+>>>>>>> Stashed changes
 
+app.use(express.json())
+app.use("/api/event", require('./routes/events'))
 
 const app = express();
 
@@ -17,7 +24,11 @@ mongoose.connect(`${process.env.MONGO_URL}`).catch((err) => {
     console.log(err);
 })
 
+app.get("/", (req, res) => {
+    res.send("Home Page")
+})
 
+<<<<<<< Updated upstream
 
 const addEvent = async (req, res) => {
     try {
@@ -52,3 +63,8 @@ app.post('/api/userdetails', validateUser);
 
 
 
+=======
+app.listen(8080, () => {
+    console.log("App running in port", PORT);
+})
+>>>>>>> Stashed changes

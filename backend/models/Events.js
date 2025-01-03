@@ -3,8 +3,9 @@ const { Schema } = mongoose
 
 const eventSchema = new Schema({
     user: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        type: String,
+        required: true,
+        unique: true
     },
     name: {
         type: String,

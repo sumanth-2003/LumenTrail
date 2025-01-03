@@ -1,10 +1,11 @@
-// import logo from './logo.svg';
 import './App.css';
-import Home from './components/AddEventForm';
+import Events from './components/EventList';
 
 function App() {
   return (
-    <Home />
+    <div className="App">
+      <Events />
+    </div>
   );
 }
 

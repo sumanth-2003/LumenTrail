@@ -45,28 +45,43 @@ const EventsTable = () => {
   ];
 
   return (
-    <div class="container">
-      <h1>Events</h1>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Event Name</th>
-            <th>Date</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {events.map((event, index) => (
-            <tr key={index}>
-              <td>{event.name}</td>
-              <td>{event.date}</td>
-              <td>{event.description}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
-  );
+//     <div style={{ display: "flex", flexWrap: "wrap", gap: "1rem" }}>
+//     {events.map((event, index) => (
+//       <div key={index} className="card" style={{ width: "18rem" }}>
+//         <div className="card-body">
+//           <h5 className="card-title">{event.name}</h5>
+//           <p className="card-text">
+//             <strong>Date:</strong> {event.date}
+//             <br />
+//             {event.description}
+//           </p>
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+  <div className="container my-3">
+    <h2 className="my-3">Events</h2>
+  <div className="row">
+    {events.map((event, index) => (
+      <div key={index} className="col-md-4 mb-4">
+        <div className="card" style={{ width: "18rem" }}>
+          <div className="card-body">
+            <h5 className="card-title">{event.name}</h5>
+            <p className="card-text">
+              <strong>Date:</strong> {event.date}
+              <br />
+              {event.description}
+            </p>
+            <a href="#" className="btn btn-primary">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+);
 };
 
 export default EventsTable;

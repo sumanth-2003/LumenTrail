@@ -1,5 +1,5 @@
 import './App.css';
-import Events from './components/Home';
+import Events from './components/EventList';
 
 function App() {
   return (
